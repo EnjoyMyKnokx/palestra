@@ -182,49 +182,415 @@ const ALPHA = [
  ["Φ","φ","phi","ph (f)"],["Χ","χ","chi","ch (kh)"],["Ψ","ψ","psi","ps"],["Ω","ω","omega","ō (lunga)"]
 ];
 
-const VOC = {
- la: [
-  ["aqua, -ae f.","acqua"],["puella, -ae f.","fanciulla/ragazza"],["agricola, -ae m.","contadino/agricoltore"],
-  ["nauta, -ae m.","marinaio"],["via, -ae f.","via/strada"],["terra, -ae f.","terra"],
-  ["dominus, -ī m.","padrone/signore"],["puer, puerī m.","fanciullo/ragazzo/bambino"],["amīcus, -ī m.","amico"],
-  ["liber, librī m.","libro"],["deus, -ī m.","dio"],["bellum, -ī n.","guerra"],["verbum, -ī n.","parola"],
-  ["rēx, rēgis m.","re"],["mīles, mīlitis m.","soldato"],["corpus, corporis n.","corpo"],
-  ["nōmen, nōminis n.","nome"],["urbs, urbis f.","città"],["mare, maris n.","mare"],
-  ["cīvis, cīvis m.","cittadino"],["tempus, temporis n.","tempo"],["homō, hominis m.","uomo/essere umano"],
-  ["māter, mātris f.","madre"],["pater, patris m.","padre"],["manus, -ūs f.","mano/schiera"],
-  ["rēs, reī f.","cosa/faccenda"],["diēs, diēī m.","giorno"],
-  ["amō, -ās, -āvī, -ātum, -āre","amare"],["videō, -ēs, vīdī, vīsum, -ēre","vedere"],
-  ["habeō, -ēs, -uī, -itum, -ēre","avere"],["dīcō, -is, dīxī, dictum, -ere","dire"],
-  ["faciō, -is, fēcī, factum, -ere","fare"],["veniō, -īs, vēnī, ventum, -īre","venire"],
-  ["bonus, -a, -um","buono"],["malus, -a, -um","cattivo/malvagio"],["magnus, -a, -um","grande"],
-  ["semper","sempre"],["et","e"],["sed","ma"],["cum + abl.","con"],["nōn","non"],
-  ["fēmina, -ae f.","donna"],["poēta, -ae m.","poeta"],["populus, -ī m.","popolo"],["animus, -ī m.","animo/spirito/coraggio"],
-  ["oppidum, -ī n.","città fortificata/città"],["cōnsilium, -ī n.","decisione/piano/consiglio"],["lēx, lēgis f.","legge"],
-  ["pāx, pācis f.","pace"],["virtūs, virtūtis f.","virtù/valore"],["iter, itineris n.","cammino/viaggio"],
-  ["fortis, -e","forte/coraggioso"],["omnis, -e","ogni/tutto"],["capiō, -is, cēpī, captum, -ere","prendere"],
-  ["mittō, -is, mīsī, missum, -ere","mandare/inviare"],["ferō, fers, tulī, lātum, ferre","portare"],
-  ["eō, īs, iī, itum, īre","andare"],["pugnō, -ās, -āvī, -ātum, -āre","combattere"],["timeō, -ēs, -uī, -ēre","temere"],
-  ["hortor, -āris, -ātus sum, -ārī","esortare"],["quod (cong.)","perché/poiché"],["ubi","dove/quando"],["nam","infatti"]
- ],
- gr: [
-  ["λόγος, -ου, ὁ","parola/discorso/ragione"],["ἄνθρωπος, -ου, ὁ","uomo/essere umano"],["θεός, -οῦ, ὁ","dio"],
-  ["ψυχή, -ῆς, ἡ","anima"],["πόλις, -εως, ἡ","città"],["οἶκος, -ου, ὁ","casa"],["ἵππος, -ου, ὁ","cavallo"],
-  ["θάλαττα, -ης, ἡ","mare"],["ἡμέρα, -ας, ἡ","giorno"],["νύξ, νυκτός, ἡ","notte"],["πατήρ, πατρός, ὁ","padre"],
-  ["μήτηρ, μητρός, ἡ","madre"],["παῖς, παιδός, ὁ/ἡ","fanciullo/ragazzo/bambino"],["γυνή, γυναικός, ἡ","donna/moglie"],
-  ["ἀνήρ, ἀνδρός, ὁ","uomo/marito"],["βίος, -ου, ὁ","vita"],["χρόνος, -ου, ὁ","tempo"],["ὁδός, -οῦ, ἡ","strada/via"],
-  ["φίλος, -ου, ὁ","amico"],["δῶρον, -ου, τό","dono"],["ἔργον, -ου, τό","opera/lavoro"],
-  ["σοφία, -ας, ἡ","sapienza"],["ἀλήθεια, -ας, ἡ","verità"],["πόλεμος, -ου, ὁ","guerra"],["εἰρήνη, -ης, ἡ","pace"],
-  ["λέγω","dire"],["γράφω","scrivere"],["ἔχω","avere"],["βλέπω","vedere/guardare"],["παιδεύω","educare"],
-  ["λύω","sciogliere/liberare"],["ἀγαθός, -ή, -όν","buono"],["καλός, -ή, -όν","bello"],["κακός, -ή, -όν","cattivo/malvagio"],
-  ["μέγας, μεγάλη, μέγα","grande"],["καί","e/anche"],["ἀλλά","ma"],["οὐ / οὐκ / οὐχ","non"],
-  ["στρατιώτης, -ου, ὁ","soldato"],["πολίτης, -ου, ὁ","cittadino"],["βασιλεύς, -έως, ὁ","re"],["γένος, -ους, τό","stirpe/genere"],
-  ["πρᾶγμα, -ατος, τό","cosa/fatto/faccenda"],["σῶμα, -ατος, τό","corpo"],["ὄνομα, -ατος, τό","nome"],["χείρ, χειρός, ἡ","mano"],
-  ["δίκαιος, -α, -ον","giusto"],["ἀεί","sempre"],["γάρ","infatti"],["δέ","e/ma/poi"],["μέν… δέ…","da una parte… dall'altra…"],
-  ["πράττω","fare/agire"],["πέμπω","mandare/inviare"],["λαμβάνω","prendere"],["ἄγω","condurre/guidare"],
-  ["φέρω","portare"],["ἀκούω","ascoltare/sentire"],["ὁράω","vedere"],["βούλομαι","volere"],["τιμάω","onorare"],
-  ["ποιέω","fare"],["δηλόω","mostrare/rivelare"]
- ]
+/* Lessico: "#n" nomi, "#v" verbi, "#a" aggettivi, "#x" altro (avverbi, preposizioni, congiunzioni).
+   Ogni riga: lemma | significato (più significati separati da "/") */
+const VOC_TXT = {
+la: `
+#n
+aqua, -ae f. | acqua
+puella, -ae f. | fanciulla/ragazza
+agricola, -ae m. | contadino/agricoltore
+nauta, -ae m. | marinaio
+via, -ae f. | via/strada
+terra, -ae f. | terra
+fēmina, -ae f. | donna
+poēta, -ae m. | poeta
+silva, -ae f. | bosco/selva
+īnsula, -ae f. | isola
+patria, -ae f. | patria
+fortūna, -ae f. | fortuna/sorte
+glōria, -ae f. | gloria
+īra, -ae f. | ira
+pugna, -ae f. | battaglia
+cūra, -ae f. | cura/preoccupazione
+fuga, -ae f. | fuga
+victōria, -ae f. | vittoria
+dea, -ae f. | dea
+fīlia, -ae f. | figlia
+vīta, -ae f. | vita
+cōpiae, -ārum f. pl. | truppe
+dīvitiae, -ārum f. pl. | ricchezze
+dominus, -ī m. | padrone/signore
+puer, puerī m. | fanciullo/ragazzo/bambino
+amīcus, -ī m. | amico
+liber, librī m. | libro
+deus, -ī m. | dio
+populus, -ī m. | popolo
+animus, -ī m. | animo/spirito/coraggio
+ager, agrī m. | campo
+fīlius, -ī m. | figlio
+servus, -ī m. | schiavo/servo
+equus, -ī m. | cavallo
+gladius, -ī m. | spada
+lēgātus, -ī m. | ambasciatore/luogotenente
+mūrus, -ī m. | muro
+oculus, -ī m. | occhio
+vir, virī m. | uomo/marito
+bellum, -ī n. | guerra
+verbum, -ī n. | parola
+oppidum, -ī n. | città fortificata/città
+cōnsilium, -ī n. | decisione/piano/consiglio
+dōnum, -ī n. | dono
+auxilium, -ī n. | aiuto
+perīculum, -ī n. | pericolo
+proelium, -ī n. | battaglia
+rēgnum, -ī n. | regno
+templum, -ī n. | tempio
+castra, -ōrum n. pl. | accampamento
+arma, -ōrum n. pl. | armi
+rēx, rēgis m. | re
+mīles, mīlitis m. | soldato
+corpus, corporis n. | corpo
+nōmen, nōminis n. | nome
+urbs, urbis f. | città
+mare, maris n. | mare
+cīvis, cīvis m. | cittadino
+tempus, temporis n. | tempo
+homō, hominis m. | uomo/essere umano
+māter, mātris f. | madre
+pater, patris m. | padre
+frāter, frātris m. | fratello
+soror, sorōris f. | sorella
+lēx, lēgis f. | legge
+pāx, pācis f. | pace
+virtūs, virtūtis f. | virtù/valore
+iter, itineris n. | cammino/viaggio/marcia
+dux, ducis m. | comandante
+hostis, hostis m. | nemico
+mors, mortis f. | morte
+nox, noctis f. | notte
+lūx, lūcis f. | luce
+amor, amōris m. | amore
+labor, labōris m. | fatica/lavoro
+mōs, mōris m. | costume/usanza
+caput, capitis n. | testa/capo
+flūmen, flūminis n. | fiume
+genus, generis n. | stirpe/genere
+opus, operis n. | opera/lavoro
+vulnus, vulneris n. | ferita
+animal, animālis n. | animale
+ōrātiō, ōrātiōnis f. | discorso
+legiō, legiōnis f. | legione
+senātus, -ūs m. | senato
+exercitus, -ūs m. | esercito
+manus, -ūs f. | mano/schiera
+domus, -ūs f. | casa
+metus, -ūs m. | paura
+cornū, -ūs n. | corno/ala
+rēs, reī f. | cosa/faccenda
+diēs, diēī m. | giorno
+fidēs, fideī f. | fede/lealtà
+spēs, speī f. | speranza
+rēs pūblica, reī pūblicae f. | stato/repubblica
+#v
+amō, -ās, -āvī, -ātum, -āre | amare
+pugnō, -ās, -āvī, -ātum, -āre | combattere
+laudō, -ās, -āvī, -ātum, -āre | lodare
+vocō, -ās, -āvī, -ātum, -āre | chiamare
+portō, -ās, -āvī, -ātum, -āre | portare
+parō, -ās, -āvī, -ātum, -āre | preparare
+servō, -ās, -āvī, -ātum, -āre | conservare/salvare
+nāvigō, -ās, -āvī, -ātum, -āre | navigare
+dō, dās, dedī, datum, dare | dare
+stō, stās, stetī, statum, stāre | stare
+videō, -ēs, vīdī, vīsum, -ēre | vedere
+habeō, -ēs, -uī, -itum, -ēre | avere
+timeō, -ēs, -uī, -ēre | temere
+moneō, -ēs, -uī, -itum, -ēre | ammonire/avvisare
+teneō, -ēs, -uī, tentum, -ēre | tenere
+doceō, -ēs, -uī, doctum, -ēre | insegnare
+dēleō, -ēs, -ēvī, -ētum, -ēre | distruggere
+iubeō, -ēs, iussī, iussum, -ēre | ordinare
+maneō, -ēs, mānsī, mānsum, -ēre | rimanere
+dīcō, -is, dīxī, dictum, -ere | dire
+legō, -is, lēgī, lēctum, -ere | leggere/scegliere
+dūcō, -is, dūxī, ductum, -ere | condurre/guidare
+mittō, -is, mīsī, missum, -ere | mandare/inviare
+scrībō, -is, scrīpsī, scrīptum, -ere | scrivere
+regō, -is, rēxī, rēctum, -ere | reggere/governare
+vincō, -is, vīcī, victum, -ere | vincere
+gerō, -is, gessī, gestum, -ere | portare/condurre
+petō, -is, petīvī, petītum, -ere | chiedere/dirigersi verso
+quaerō, -is, quaesīvī, quaesītum, -ere | cercare/chiedere
+relinquō, -is, relīquī, relictum, -ere | lasciare/abbandonare
+capiō, -is, cēpī, captum, -ere | prendere
+faciō, -is, fēcī, factum, -ere | fare
+fugiō, -is, fūgī, -ere | fuggire
+accipiō, -is, accēpī, acceptum, -ere | ricevere/accogliere
+veniō, -īs, vēnī, ventum, -īre | venire
+audiō, -īs, -īvī, -ītum, -īre | ascoltare/udire
+sentiō, -īs, sēnsī, sēnsum, -īre | sentire/percepire
+mūniō, -īs, -īvī, -ītum, -īre | fortificare
+sum, es, fuī, esse | essere
+possum, potes, potuī, posse | potere
+ferō, fers, tulī, lātum, ferre | portare
+eō, īs, iī, itum, īre | andare
+volō, vīs, voluī, velle | volere
+hortor, -āris, -ātus sum, -ārī | esortare
+loquor, -eris, locūtus sum, loquī | parlare
+sequor, -eris, secūtus sum, sequī | seguire
+#a
+bonus, -a, -um | buono
+malus, -a, -um | cattivo/malvagio
+magnus, -a, -um | grande
+parvus, -a, -um | piccolo
+multus, -a, -um | molto
+longus, -a, -um | lungo
+lātus, -a, -um | largo/ampio
+altus, -a, -um | alto/profondo
+novus, -a, -um | nuovo
+clārus, -a, -um | illustre/famoso
+pulcher, -chra, -chrum | bello
+miser, -era, -erum | infelice/misero
+līber, -era, -erum | libero
+Rōmānus, -a, -um | romano
+fortis, -e | forte/coraggioso
+omnis, -e | ogni/tutto
+brevis, -e | breve
+gravis, -e | pesante/grave
+facilis, -e | facile
+difficilis, -e | difficile
+ācer, ācris, ācre | acuto/fiero
+ingēns, ingentis | enorme
+fēlīx, fēlīcis | felice/fortunato
+audāx, audācis | audace
+#x
+semper | sempre
+et | e
+-que | e
+sed | ma
+nōn | non
+nam | infatti
+enim | infatti
+autem | invece/poi
+itaque | perciò/quindi
+quod (cong.) | perché/poiché
+quia | perché
+ubi | dove/quando
+cum + abl. | con
+in + abl. | in
+in + acc. | in/verso
+ad + acc. | verso/a
+ab, ā + abl. | da
+ex, ē + abl. | da/fuori da
+dē + abl. | da/riguardo a
+per + acc. | attraverso/per mezzo di
+post + acc. | dopo/dietro
+ante + acc. | prima di/davanti a
+contrā + acc. | contro
+sine + abl. | senza
+prō + abl. | davanti a/a favore di
+iam | già/ormai
+nunc | ora
+tum | allora
+saepe | spesso
+etiam | anche/perfino
+quoque | anche
+neque | e non/né
+aut | o
+sī | se
+ut + cong. | affinché/che
+nē + cong. | affinché non
+dum | mentre
+hīc | qui
+ibi | lì
+nōn sōlum… sed etiam | non solo… ma anche
+`,
+gr: `
+#n
+λόγος, -ου, ὁ | parola/discorso/ragione
+ἄνθρωπος, -ου, ὁ | uomo/essere umano
+θεός, -οῦ, ὁ | dio
+οἶκος, -ου, ὁ | casa
+ἵππος, -ου, ὁ | cavallo
+βίος, -ου, ὁ | vita
+χρόνος, -ου, ὁ | tempo
+φίλος, -ου, ὁ | amico
+πόλεμος, -ου, ὁ | guerra
+ποταμός, -οῦ, ὁ | fiume
+δοῦλος, -ου, ὁ | schiavo
+ἀδελφός, -οῦ, ὁ | fratello
+νόμος, -ου, ὁ | legge/usanza
+στρατός, -οῦ, ὁ | esercito
+ἥλιος, -ου, ὁ | sole
+θάνατος, -ου, ὁ | morte
+κίνδυνος, -ου, ὁ | pericolo
+νόσος, -ου, ἡ | malattia
+ὁδός, -οῦ, ἡ | strada/via
+νῆσος, -ου, ἡ | isola
+δῶρον, -ου, τό | dono
+ἔργον, -ου, τό | opera/lavoro
+τέκνον, -ου, τό | figlio
+ζῷον, -ου, τό | animale
+πλοῖον, -ου, τό | nave/imbarcazione
+ὅπλα, -ων, τά | armi
+ψυχή, -ῆς, ἡ | anima
+εἰρήνη, -ης, ἡ | pace
+ἀρετή, -ῆς, ἡ | virtù/valore
+τιμή, -ῆς, ἡ | onore
+γνώμη, -ης, ἡ | opinione/parere
+μάχη, -ης, ἡ | battaglia
+νίκη, -ης, ἡ | vittoria
+φωνή, -ῆς, ἡ | voce
+ἀρχή, -ῆς, ἡ | inizio/comando
+θάλαττα, -ης, ἡ | mare
+γλῶττα, -ης, ἡ | lingua
+δόξα, -ης, ἡ | opinione/gloria
+ἡμέρα, -ας, ἡ | giorno
+σοφία, -ας, ἡ | sapienza
+ἀλήθεια, -ας, ἡ | verità
+χώρα, -ας, ἡ | regione/paese
+οἰκία, -ας, ἡ | casa
+στρατιώτης, -ου, ὁ | soldato
+πολίτης, -ου, ὁ | cittadino
+νεανίας, -ου, ὁ | giovane
+ποιητής, -οῦ, ὁ | poeta
+δεσπότης, -ου, ὁ | padrone
+νύξ, νυκτός, ἡ | notte
+πατήρ, πατρός, ὁ | padre
+μήτηρ, μητρός, ἡ | madre
+θυγάτηρ, θυγατρός, ἡ | figlia
+παῖς, παιδός, ὁ/ἡ | fanciullo/ragazzo/bambino
+γυνή, γυναικός, ἡ | donna/moglie
+ἀνήρ, ἀνδρός, ὁ | uomo/marito
+πόλις, -εως, ἡ | città
+βασιλεύς, -έως, ὁ | re
+γένος, -ους, τό | stirpe/genere
+πρᾶγμα, -ατος, τό | cosa/fatto/faccenda
+σῶμα, -ατος, τό | corpo
+ὄνομα, -ατος, τό | nome
+χείρ, χειρός, ἡ | mano
+φύλαξ, -ακος, ὁ | guardia/custode
+ἄρχων, -οντος, ὁ | arconte/capo
+γέρων, -οντος, ὁ | vecchio
+ῥήτωρ, -ορος, ὁ | oratore
+πῦρ, πυρός, τό | fuoco
+ὕδωρ, ὕδατος, τό | acqua
+ναῦς, νεώς, ἡ | nave
+φύσις, -εως, ἡ | natura
+δύναμις, -εως, ἡ | forza/potenza
+ἔθνος, -ους, τό | popolo/stirpe
+τεῖχος, -ους, τό | muro
+πλῆθος, -ους, τό | moltitudine/folla
+ἔτος, -ους, τό | anno
+Ἕλλην, -ηνος, ὁ | Greco
+πούς, ποδός, ὁ | piede
+ἐλπίς, -ίδος, ἡ | speranza
+χάρις, -ιτος, ἡ | grazia/gratitudine
+#v
+λύω | sciogliere/liberare
+παιδεύω | educare
+λέγω | dire
+γράφω | scrivere
+ἔχω | avere
+βλέπω | vedere/guardare
+πράττω | fare/agire
+πέμπω | mandare/inviare
+λαμβάνω | prendere
+ἄγω | condurre/guidare
+φέρω | portare
+ἀκούω | ascoltare/sentire
+ὁράω | vedere
+βούλομαι | volere
+ἐθέλω | volere
+τιμάω | onorare
+ποιέω | fare
+δηλόω | mostrare/rivelare
+νικάω | vincere
+φιλέω | amare
+καλέω | chiamare
+ζητέω | cercare
+οἰκέω | abitare
+βοηθέω | aiutare/soccorrere
+ἀξιόω | ritenere degno/chiedere
+λείπω | lasciare
+φεύγω | fuggire
+πείθω | persuadere
+πιστεύω | credere/fidarsi
+κελεύω | ordinare
+θύω | sacrificare
+μανθάνω | imparare
+γιγνώσκω | conoscere
+ἀποθνῄσκω | morire
+μένω | rimanere
+ἄρχω | comandare/iniziare
+διώκω | inseguire
+γίγνομαι | diventare/nascere
+ἔρχομαι | andare/venire
+μάχομαι | combattere
+εἰμί | essere
+δίδωμι | dare
+τίθημι | porre/mettere
+ἵστημι | collocare/porre
+δείκνυμι | mostrare
+#a
+ἀγαθός, -ή, -όν | buono
+καλός, -ή, -όν | bello
+κακός, -ή, -όν | cattivo/malvagio
+σοφός, -ή, -όν | sapiente
+δεινός, -ή, -όν | terribile/abile
+χαλεπός, -ή, -όν | difficile
+νέος, -α, -ον | nuovo/giovane
+δίκαιος, -α, -ον | giusto
+ἄξιος, -α, -ον | degno
+μικρός, -ά, -όν | piccolo
+ἐλεύθερος, -α, -ον | libero
+φίλιος, -α, -ον | amichevole/amico
+πολέμιος, -α, -ον | nemico
+ἄδικος, -ον | ingiusto
+μέγας, μεγάλη, μέγα | grande
+πολύς, πολλή, πολύ | molto
+πᾶς, πᾶσα, πᾶν | tutto/ogni
+ἀληθής, -ές | vero
+εὐδαίμων, -ον | felice
+ταχύς, -εῖα, -ύ | veloce
+#x
+καί | e/anche
+ἀλλά | ma
+οὐ / οὐκ / οὐχ | non
+μή | non (con congiuntivo, imperativo…)
+οὐδέ | e non/neppure
+ἀεί | sempre
+γάρ | infatti
+δέ | e/ma/poi
+μέν… δέ… | da una parte… dall'altra…
+τε… καί… | sia… sia…
+οὖν | dunque
+ἤ | o/oppure/che (nei comparativi)
+εἰ | se
+ὅτι | che/perché
+ἐπεί | poiché/dopo che
+ὡς | come/che
+ἐν + dat. | in
+εἰς + acc. | verso/in
+ἐκ / ἐξ + gen. | da/fuori da
+ἀπό + gen. | da
+πρός + acc. | verso/contro
+περί + gen. | riguardo a/intorno a
+μετά + gen. | con
+μετά + acc. | dopo
+διά + gen. | attraverso
+διά + acc. | a causa di
+ὑπό + gen. | da (complemento d'agente)
+σύν + dat. | con
+νῦν | ora
+ἤδη | già
+πάλαι | anticamente/da tempo
+πολλάκις | spesso
+ἐνταῦθα | qui/lì/allora
+`
 };
+const VOC = {};
+for (const L in VOC_TXT){
+  let cat="n"; VOC[L]=[];
+  VOC_TXT[L].split("\n").forEach(line=>{
+    line=line.trim(); if(!line) return;
+    if(line[0]==="#"){cat=line.slice(1);return}
+    const [w,m]=line.split(" | ");
+    VOC[L].push([w.trim(),m.trim(),cat]);
+  });
+}
+const VCATS = {all:"Tutte le parole", n:"Nomi", v:"Verbi", a:"Aggettivi", x:"Avverbi, preposizioni, congiunzioni"};
 
 const CASES = {
   la:["nominativo","genitivo","dativo","accusativo","vocativo","ablativo"],
@@ -486,7 +852,8 @@ function viewAlpha(){
 
 /* --- Lessico: flashcard con scatole di Leitner --- */
 function viewVoc(){
-  const deck = VOC[S.lang];
+  const vcat = store.get("pal-vcat-"+S.lang,"all");
+  const deck = VOC[S.lang].filter(c => vcat==="all" || c[2]===vcat);
   const key = "pal-box-"+S.lang;
   const boxes = store.get(key,{});
   const box = w => boxes[w]||0;
@@ -500,6 +867,9 @@ function viewVoc(){
   const back  = rev ? card[0] : card[1].replace(/\//g," / ");
   const counts=[0,0,0,0,0];deck.forEach(c=>counts[Math.min(box(c[0]),4)]++);
   $("#view").innerHTML = `<div class="card">
+    <select id="vcat" style="width:100%;margin-bottom:14px">
+      ${Object.entries(VCATS).map(([k,l])=>`<option value="${k}" ${k===vcat?"selected":""}>${l} (${VOC[S.lang].filter(c=>k==="all"||c[2]===k).length})</option>`).join("")}
+    </select>
     <div class="bar" style="margin:0"><div class="lbl">Flashcard · ${S.lang==="la"?"latino":"greco"}</div>
       <label class="chk"><input type="checkbox" id="rev" ${rev?"checked":""}> Dall'italiano</label></div>
     <div class="flip" id="flash"><div class="flip-in">
@@ -517,6 +887,7 @@ function viewVoc(){
   const flip=()=>{$("#flash").classList.add("on");$("#judge").classList.remove("hidden")};
   $("#flash").onclick=flip;
   $("#rev").onchange=e=>{store.set("pal-rev",e.target.checked);viewVoc()};
+  $("#vcat").onchange=e=>{store.set("pal-vcat-"+S.lang,e.target.value);viewVoc()};
   const judge=good=>{score(good);boxes[card[0]]=good?box(card[0])+1:0;store.set(key,boxes);viewVoc()};
   $("#yes").onclick=()=>judge(true); $("#no").onclick=()=>judge(false);
   document.onkeydown=e=>{
